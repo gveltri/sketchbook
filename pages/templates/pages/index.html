@@ -1,0 +1,23 @@
+{% extends 'pages/base.html' %}
+{% load staticfiles %}
+{% block content %}
+
+<div id="viz">
+</div>
+
+<div class="container">
+
+  <h1>sketchbook</h1>
+  <h3>gerardo jv</h3>
+
+  <ol>
+    {% for page in pages %}
+    <li><a href="{% url 'pages:page' pk=page.pk %}">{{ page.date }}</a></li>
+    {% endfor  %}
+  </ol>
+
+</div>
+
+<script src="{% static 'pages/viz/main.js' %}"></script>
+
+{% endblock %}

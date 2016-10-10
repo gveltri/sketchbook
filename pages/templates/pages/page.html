@@ -1,0 +1,13 @@
+{% extends 'pages/base.html' %}
+{% load staticfiles %}
+{% block content %}
+
+<div id="viz">
+</div>
+
+{% with 'pages/viz/'|add:page.js_link as url %}
+<script src="{% static url %}"></script>
+{% endwith %}
+
+
+{% endblock %}

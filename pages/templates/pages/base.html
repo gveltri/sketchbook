@@ -1,0 +1,25 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <!-- scripts -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r77/three.js"></script> -->
+    <!-- <script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script> -->
+    <script src="{% static 'pages/javascripts/three.min.js' %}"></script>
+
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="{% static 'pages/stylesheets/style.css' %}" />
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" /> -->
+
+    <title>Sketchbook</title>
+
+  </head>
+
+  <body>
+
+    {% block content %}}
+    {% endblock %}
+
+  </body>
+</html>
