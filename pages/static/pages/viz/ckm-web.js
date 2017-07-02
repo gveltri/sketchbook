@@ -38,7 +38,7 @@ var init = function() {
     renderer.shadowMap.soft = true;
     renderer.shadowMap.type = THREE.SoftShadowMap;
     renderer.shadowMapAutoUpdate = true;
-    renderer.setClearColor( 0x3333, 1);
+    renderer.setClearColor( 0x22222, 1);
 
     document.getElementById('viz').appendChild(renderer.domElement);
 

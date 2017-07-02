@@ -75,7 +75,7 @@ var init = function() {
 
     var coords = {
         x:0,
-        y:0,
+        y:-50,
         z:50
     },
         repeat_x = 1,
@@ -134,6 +134,9 @@ var init = function() {
 }
 
 var render = function() {
+
+    TWEEN.update()
+
     counter += 1;
 
     for (i=0;i<boxes_small.length;i++) {
@@ -158,6 +161,35 @@ var resize = function() {
 	  camera.updateProjectionMatrix();
 	  renderer.setSize( window.innerWidth, window.innerHeight );
 }
+
+$('a.page-link').on('mouseover', function(e) {
+
+    _diff = parseInt(e.toElement.classList[1].split('-')[1]) * 5
+    _scalar = 10
+
+    var coords = {
+        x:-10 + Math.random() * _scalar,
+        y:30 - _diff,
+        z:40 + Math.random() * _scalar
+    }
+
+    new TWEEN.Tween( solo_box[0].position ).to(coords, 500 )
+        .easing( TWEEN.Easing.Exponential.InOut).start();
+
+});
+
+$('a.page-link').on('mouseout', function() {
+
+    var coords = {
+        x:0,
+        y:-50,
+        z:50
+    }
+
+    new TWEEN.Tween( solo_box[0].position ).to(coords, 500 )
+        .easing( TWEEN.Easing.Exponential.InOut).start();
+
+});
 
 
 init();
