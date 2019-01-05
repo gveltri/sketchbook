@@ -12,7 +12,7 @@
 
   <ol>
     {% for page in pages %}
-    <li><a class="page-link link-{{forloop.counter}}" href="{% url 'pages:page' pk=page.pk %}">{{ page.date }}</a></li>
+    <li><a class="page-link link-{{forloop.counter}}" href="{% url 'pages:page' pk=page.pk %}">{{ page.js_link }}</a></li>
     {% endfor  %}
   </ol>
 
